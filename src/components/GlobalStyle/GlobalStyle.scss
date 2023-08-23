@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;700&family=Great+Vibes&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --text-color: #767878;
+    --dark-text-color: #212529;
+    --primary-color: #5e9a8e;
+    --primary-font-family: 'Dosis', sans-serif;
+    --secondary-font-family: 'Great Vibes', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    width: 100%;
+}
+
+body {
+    font-family: var(--primary-font-family);
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--text-color);
+    text-rendering: optimizeSpeed;
+}
+
