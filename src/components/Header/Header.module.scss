@@ -1,9 +1,17 @@
-.header {
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
     display: flex;
     justify-content: center;
-    // background-color: aqua;
+    z-index: 1;
+    background-color: #ffffff;
 }
-.container {
+.inner {
     width: 100%;
     display: flex;
     align-items: center;
@@ -13,7 +21,7 @@
 
 
 .logo {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-family: var(--secondary-font-family);
     color: var(--primary-color);
     text-shadow: 1px 1px 2px #999999;
@@ -25,16 +33,40 @@
 }
 .menu-btn {
     width: 50px;
-    height: 100%;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: none;
+    background-color: transparent;
+    .menu-btn-icon {
+        font-size: 30px;
+        color: var(--primary-color);
+    }
 }
 .nav-list {
     display: none;
 }
+
+.menu-nav-list {
+    .menu-nav-item {
+        list-style: none;
+    }
+    .menu-nav-link {
+        display: block;
+        padding: 15px 5px;
+        font-weight: 600;
+        font-size: 1.8rem;
+        font-family: var(--primary-font-family);
+        color: var(--dark-text-color);
+        text-decoration: none;
+        text-transform: uppercase;
+        border-bottom: 1px solid #dddddd;
+    }
+}
+
 @media (min-width: 992px) {
-    .container {
+    .inner {
         max-width: 1200px;
         width: 70%;
         display: flex;
@@ -48,7 +80,7 @@
         font-size: 3.5rem;
         font-family: var(--secondary-font-family);
         color: var(--primary-color);
-        text-shadow: 1px 1px 2px #999999;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
         .logo-heart {
             margin-left: 15px;
             margin-right: 15px;
@@ -67,17 +99,50 @@
         justify-content: space-around;
         .nav-item {
             list-style: none;
-            &:hover {
-                .nav-link {
-                    color: red;
-                    transition: all 0.25s ease-in;
-                }
+            position: relative;
+            &::before {
+                content: '\f004';
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                color: red;
+                position: absolute;
+                top: calc(50% - 2px);
+                left: calc(50% - 2px);
+                opacity: 0;
+                z-index: -1;
             }
-            &~.nav-item {
-                margin-left: 50px;
+            &::after {
+                content: '\f004';
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                color: red;
+                position: absolute;
+                top: calc(50% - 2px);
+                right: calc(50% - 2px);
+                opacity: 0;
+                z-index: -1;
             }
+            &:hover::before {
+                opacity: 1;
+                transition: all 0.4s ease-in;
+                top: 5px;
+                left: 5px;
+            }
+            &:hover::after {
+                opacity: 1;
+                transition: all 0.4s ease-in;
+                top: 5px;
+                right: 5px;
+            }
+            
         }
+        
         .nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 60px;
             font-weight: 600;
             color: var(--dark-text-color);
             text-decoration: none;

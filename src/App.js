@@ -7,13 +7,13 @@ import StoryPage from './pages/StoryPage';
 function App() {
   return (
       <div className='app'>
-        <Header />
         <Routes>
           <Route path="/" element={<HomePage/>} />
           <Route path="/album" element={<AlbumPage/>} />
           <Route path="/story" element={<StoryPage/>} />
           <Route path="/upload" element={<UploadPage/>} />
         </Routes>
+        
       </div>
   );
 }
