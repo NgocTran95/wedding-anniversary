@@ -13,26 +13,26 @@ function Banner() {
       let x = e.offsetX;
       let y = e.offsetY;
 
-      let size = Math.random()*80;
+      let size = Math.random() * 80;
       heart.style.width = 20 + size + 'px';
       heart.style.height = 20 + size + 'px';
 
-      let tranformValue = Math.random()*360;
-      heart.style.transform = 'rotate('+ tranformValue+'deg)';
-      heart.style.left = x+'px';
-      heart.style.top = y+'px';
+      let tranformValue = Math.random() * 360;
+      heart.style.transform = 'rotate(' + tranformValue + 'deg)';
+      heart.style.left = x + 'px';
+      heart.style.top = y + 'px';
       banner.appendChild(heart);
       setTimeout(() => {
         heart.remove();
-      },1000);
-    }
+      }, 1000);
+    };
     document.addEventListener('mousemove', heartAnimation);
     return () => {
-      document.removeEventListener('mousemove', heartAnimation)
-    }
-  })
+      document.removeEventListener('mousemove', heartAnimation);
+    };
+  });
   return (
-    <div className={cx('container')} id={'banner'}>
+    <section className={cx('container')} id={'banner'}>
       <div className={cx('information')}>
         <div className={cx('banner-content')}>
           <h1 className={cx('couple-name')}>Trần Ngọc & Sa Sa</h1>
@@ -40,7 +40,7 @@ function Banner() {
           <p className={cx('wedding-date')}>01-05-2021</p>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

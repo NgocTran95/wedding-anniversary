@@ -1,0 +1,80 @@
+.container {
+    padding: 80px 0 80px 0;
+}
+
+.inner {
+    max-width: 1320px;
+    padding: 0 13.5px;
+    margin: auto;
+}
+
+.row {
+    &~.row {
+        margin-top: 30px;
+    }
+}
+
+.portrait {
+    aspect-ratio: 1 / 0.8;
+    overflow: hidden;
+}
+
+.image {
+    width: 100%;
+}
+
+.details {
+    padding: 40px 25px;
+    background-color: #eff5f3;
+    min-height: fit-content;
+    .title {
+        font-size: 2rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-family: var(--primary-font-family);
+        color: #3d3d3d;
+        margin-bottom: 14px;
+    }
+    .quote {
+        color: #767878;
+        line-height: 1.8em;
+        margin-bottom: 18px;
+        font-size: 1.6rem;
+        font-family: var(--primary-font-family);
+    }
+    .signature {
+        position: relative;
+        font-size: 2.2rem;
+        font-weight: 600;
+        font-family: var(--secondary-font-family);
+        padding-left: 25px;
+        &::before {
+            content: '';
+            background-color: #000;
+            width: 15px;
+            height: 1px;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .row {
+        padding: 0 30px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .row {
+        &.row {
+            margin-top: unset;
+        }
+    }
+    .details {
+        aspect-ratio: 1 / 0.8;
+        padding: 50px 55px;
+    }
+}
