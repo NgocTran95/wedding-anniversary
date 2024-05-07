@@ -4,6 +4,7 @@ import styles from './HomePage.module.scss';
 import Header from '../../components/Header';
 import Banner from './Banner';
 import Couple from './Couple';
+import CountUp from './CountUp';
 
 const cx = classNames.bind(styles);
 function HomePage() {
@@ -12,6 +13,7 @@ function HomePage() {
       <Header />
       <Banner />
       <Couple />
+      <CountUp />
     </div>
   );
 }

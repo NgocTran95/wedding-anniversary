@@ -1,0 +1,65 @@
+.count-up {
+    width: 100%;
+    background: url('../../../assets/images/count-up-bg.jpg');
+    background-position-x: center;
+    background-position-y: 0px;
+    background-size: cover;
+    backdrop-filter: opacity(0.6);
+    padding: 100px 0;
+    &::before {
+        content: "";
+        background-color: rgba(0, 0, 0, 0.55);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+}
+
+.container {
+    margin: auto;
+    padding: 0 15px;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--secondary-font-family);
+    font-size: 5rem;
+    font-weight: 500;
+    color: #ffffff;
+    span {
+        font-size: 2rem;
+    }
+}
+
+.count-up-clock {
+    margin-top: 35px;
+    .clock {
+        overflow: hidden;
+    }
+    .box {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: calc(50% - 10px);
+        margin: 5px;
+        padding: 15px;
+        color: #5e9a8e;
+        border: 5px solid #d5d5d5;
+        border-radius: 5px;
+        background-color: #ffffff;
+        .value {
+            font-size: 3rem;
+            font-family: var(--primary-font-family);
+            font-weight: 600;
+        }
+        span {
+            font-size: 1.4rem;
+            text-transform: uppercase;
+        }
+    }
+}
+
